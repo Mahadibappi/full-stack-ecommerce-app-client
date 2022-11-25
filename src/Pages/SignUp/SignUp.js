@@ -66,6 +66,12 @@ const SignUp = () => {
             <div className='w-96 p-7' >
                 <h2 className='text-3xl text-center'>Sign Up</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
+                    <label className='label'> <span className='label-text'>Select Account</span></label>
+                    <select className="select select-bordered w-full max-w-xs">
+                        <option selected>User</option>
+                        <option>Admin</option>
+                        <option>Seller</option>
+                    </select>
                     <div className='form-control '>
                         <label className='label'> <span className='label-text'>Name</span></label>
                         <input {...register("name", { required: "Name is required" })} className="input input-bordered " placeholder="Name" />
