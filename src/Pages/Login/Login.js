@@ -4,11 +4,12 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useToken from '../../Hooks/useToken';
+import Spinner from '../../Shared/Spinner';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [loginErron, setloginError] = useState('')
-    const { signIn, googleLogin } = useContext(AuthContext)
+    const { signIn, googleLogin, loading } = useContext(AuthContext)
     const [loginUserEmail, setloginUserEmail] = useState('')
     const [token] = useToken(loginUserEmail)
 
@@ -34,6 +35,9 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
+                if (loading) {
+                    return <Spinner></Spinner>
+                }
                 setloginUserEmail(data.email)
 
             })
