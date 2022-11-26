@@ -11,7 +11,7 @@ const Products = () => {
 
     return (
         <section>
-            <div className='grid md:grid-cols-2 mt-10'>
+            <div className='grid md:grid-cols-2 md:w-full mt-10'>
                 {
                     category?.map(product => <ProductCard key={product._id} product={product}
                         setInfo={setInfo}
@@ -23,7 +23,7 @@ const Products = () => {
 
             </div>
             {info &&
-                <ProductModal info={info}></ProductModal>
+                <ProductModal info={info} setInfo={setInfo}></ProductModal>
             }
         </section>
     );

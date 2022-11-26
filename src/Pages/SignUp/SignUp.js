@@ -6,11 +6,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const SignUp = () => {
+
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, updateUser, googleLogin } = useContext(AuthContext)
     const [signupError, setSignupError] = useState('')
     const [createdEmail, setCreatedEmail] = useState('')
 
+    const navigate = useNavigate()
 
     const provider = new GoogleAuthProvider();
 
@@ -31,7 +33,7 @@ const SignUp = () => {
                 updateUser(userInfo)
                     .then(() => {
                         saveUser(data.name, data.email)
-                        // navigate('/')
+                        navigate('/')
                     })
                     .catch(err => console.log(err))
 
