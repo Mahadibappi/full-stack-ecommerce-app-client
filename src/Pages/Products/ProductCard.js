@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ product, setInfo }) => {
     const { name, img, location, Release_Date, Release_Price, Original_Price, published_date, Years_of_use, sellers_name } = product
+
     return (
         <div className="card card-compact w-1/2 mx-auto ">
             <figure><img className='rounded' src={img} alt="Shoes" /></figure>

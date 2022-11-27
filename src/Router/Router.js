@@ -6,6 +6,7 @@ import Dashboard from '../DashboardLayout/Dashboard';
 import DashboardLayout from '../DashboardLayout/DashboardLayout'
 import ManageUser from '../DashboardLayout/ManageUser';
 import MyOrders from '../DashboardLayout/MyOrders';
+import MyProducts from '../DashboardLayout/MyProducts';
 import NewProduct from '../DashboardLayout/NewProduct';
 import Main from '../Layout/Main';
 import Blog from '../Pages/Blog/Blog';
@@ -66,19 +67,20 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/sellers',
-                element: <AdminRoute><AllSeller /></AdminRoute>
+                element: <NewProduct />
             },
             {
                 path: '/dashboard/buyers',
                 element: <AdminRoute><Buyers /></AdminRoute>
             },
             {
-                path: '/dashboard/newproduct',
-                element: <NewProduct />
+                path: '/dashboard/allseller',
+                element: <AdminRoute><AllSeller /></AdminRoute>
             },
+
             {
-                path: '/dashboard/manageuser',
-                element: <ManageUser />
+                path: '/dashboard/myproducts',
+                element: <MyProducts />
             },
 
 
