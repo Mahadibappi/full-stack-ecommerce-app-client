@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+# Let's introduce with Second hand laptop selling app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Features
 
-In the project directory, you can run:
+## Sales second laptop to the market
+
+## Add product by your self
+
+## Admin role and different seller role
+
+## Dynamic payment system
 
 ### `npm start`
 
