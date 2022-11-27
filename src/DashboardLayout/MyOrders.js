@@ -43,7 +43,7 @@ const MyOrders = () => {
                     <tbody>
                         {
                             orders &&
-                            orders?.map((order, i) => <tr key={i} className="hover">
+                            orders?.map((order, i) => <tr key={order._id} className="hover">
                                 <th>{1 + i}</th>
                                 <td> <div className="avatar">
                                     <div className="mask mask-squircle w-12 h-12">
@@ -53,11 +53,15 @@ const MyOrders = () => {
                                 <td>{order.product}</td>
                                 <td>{order.price}</td>
                                 <td>
+                                    {
+                                        order.price && !order.paid && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-primary btn-sm'>Pay </button></Link>
+                                    }
+
+                                    {
+                                        order.price && order.paid && <button className='btn text-green-600 btn-sm'>Paid</button>
+                                    }
 
 
-                                    <button className='btn btn-primary btn-sm'>Pay </button>
-
-                                    <button className='btn text-green-600 btn-sm'>Paid</button>
 
                                 </td>
                             </tr>)

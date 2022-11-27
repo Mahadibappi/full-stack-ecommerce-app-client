@@ -8,6 +8,7 @@ import ManageUser from '../DashboardLayout/ManageUser';
 import MyOrders from '../DashboardLayout/MyOrders';
 import MyProducts from '../DashboardLayout/MyProducts';
 import NewProduct from '../DashboardLayout/NewProduct';
+import Payment from '../DashboardLayout/Payment';
 import Main from '../Layout/Main';
 import Blog from '../Pages/Blog/Blog';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
@@ -81,6 +82,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/myproducts',
                 element: <MyProducts />
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment />,
+                loader: ({ params }) => fetch(`http://localhost:5000/orders/${params.id}`)
             },
 
 
