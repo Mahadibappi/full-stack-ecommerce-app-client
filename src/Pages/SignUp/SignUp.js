@@ -32,11 +32,12 @@ const SignUp = () => {
                 console.log(user);
                 toast.success('User Created Successfully')
                 const userInfo = {
-                    displayName: data.name
+                    displayName: data.name,
+
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email)
+                        saveUser(data.name, data.email, data.role)
                         navigate('/')
                     })
                     .catch(err => console.log(err))
@@ -49,8 +50,8 @@ const SignUp = () => {
             })
     }
     // create user for to send database 
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -73,7 +74,7 @@ const SignUp = () => {
                 <h2 className='text-3xl text-center'>Sign Up</h2>
                 <form onSubmit={handleSubmit(handleLogin)}>
                     <label className='label'> <span className='label-text'>Select Account</span></label>
-                    <select className="select select-bordered w-full max-w-xs">
+                    <select  {...register('role')} className="select select-bordered w-full max-w-xs">
                         <option selected>User</option>
                         <option>Admin</option>
                         <option>Seller</option>
