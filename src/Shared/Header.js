@@ -24,6 +24,7 @@ const Header = () => {
         }
 
         <li><Link to='/signup'>Sign UP</Link></li>
+        <li><Link to='/advertise'>Advertise Items</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
 
 

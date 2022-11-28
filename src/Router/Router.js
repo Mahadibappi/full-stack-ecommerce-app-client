@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import AdvertiseItem from '../DashboardLayout/AdvertiseItem';
 import AllSeller from '../DashboardLayout/AllSeller';
 import Buyers from '../DashboardLayout/Buyers';
 import Dashboard from '../DashboardLayout/Dashboard';
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/products/:id',
-                element: <Products></Products>,
+                element: <PrivateRoute><Products></Products></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
@@ -49,8 +50,8 @@ const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: '/dashboard',
-                element: <Dashboard></Dashboard>
+                path: '/advertise',
+                element: <AdvertiseItem></AdvertiseItem>
             },
 
 

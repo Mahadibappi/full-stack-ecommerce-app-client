@@ -11,7 +11,6 @@ const CheckoutForm = ({ orders }) => {
     const stripe = useStripe();
     const elements = useElements();
     const { price, name, email, _id } = orders
-    const navigate = useNavigate()
 
     useEffect(() => {
         fetch('http://localhost:5000/create-payment-intent', {
@@ -99,7 +98,7 @@ const CheckoutForm = ({ orders }) => {
                     if (data.insertedId) {
                         setSuccess('Congrats! Your Payment Completed');
                         settransactionId(paymentIntent.id)
-                        navigate('/')
+
                     }
 
                 })
