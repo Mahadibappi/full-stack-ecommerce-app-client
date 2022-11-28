@@ -1,21 +1,22 @@
 # Let's introduce with Second hand laptop selling app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Live Link:https://used-products-c867c.web.app/
 
 ## Available Features
 
-## admin - hasan@gmail.com , pass-pass:AS123@#
-
 ## Sales second laptop to the market
 
-## Add product by your self
+## Buyer can order products
+
+## Sellers can add products
+
+## Admin can see all users and sellers
 
 ## Admin role and different seller role
 
 ## Dynamic payment system
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## admin - hasan@gmail.com , pass-pass:AS123@#
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
