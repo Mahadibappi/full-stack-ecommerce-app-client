@@ -15,8 +15,6 @@ const Products = () => {
                 {
                     category?.map(product => <ProductCard key={product._id} product={product}
                         setInfo={setInfo}
-
-
                     >
                     </ProductCard>)
                 }

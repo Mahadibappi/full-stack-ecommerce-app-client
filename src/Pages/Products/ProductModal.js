@@ -27,7 +27,7 @@ const ProductModal = ({ info, setInfo }) => {
             phone,
             location
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://product-server-ashen.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

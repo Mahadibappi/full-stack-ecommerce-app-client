@@ -14,7 +14,7 @@ const CheckoutForm = ({ orders }) => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://product-server-ashen.vercel.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 "content-Type": "application/json",
@@ -85,7 +85,7 @@ const CheckoutForm = ({ orders }) => {
                 bookingId: _id
 
             }
-            fetch('http://localhost:5000/payments', {
+            fetch('https://product-server-ashen.vercel.app/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

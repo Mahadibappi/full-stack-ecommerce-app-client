@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Categories = () => {
     const [categories, setCategories] = useState('')
     useEffect(() => {
-        fetch('http://localhost:5000/brands')
+        fetch('https://product-server-ashen.vercel.app/brands')
             .then(res => res.json())
             .then(data => {
                 setCategories(data)

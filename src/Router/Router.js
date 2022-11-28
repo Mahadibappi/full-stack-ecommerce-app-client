@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: '/products/:id',
                 element: <Products></Products>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://product-server-ashen.vercel.app/category/${params.id}`)
             },
             {
                 path: '/login',
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/buyers',
-                element: <AdminRoute><Buyers /></AdminRoute>
+                element: <Buyers />
             },
             {
                 path: '/dashboard/allseller',
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment />,
-                loader: ({ params }) => fetch(`http://localhost:5000/orders/${params.id}`)
+                loader: ({ params }) => fetch(`https://product-server-ashen.vercel.app/orders/${params.id}`)
             },
 
 
