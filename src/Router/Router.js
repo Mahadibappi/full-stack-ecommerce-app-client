@@ -5,7 +5,6 @@ import AllSeller from '../DashboardLayout/AllSeller';
 import Buyers from '../DashboardLayout/Buyers';
 import Dashboard from '../DashboardLayout/Dashboard';
 import DashboardLayout from '../DashboardLayout/DashboardLayout'
-import ManageUser from '../DashboardLayout/ManageUser';
 import MyOrders from '../DashboardLayout/MyOrders';
 import MyProducts from '../DashboardLayout/MyProducts';
 import NewProduct from '../DashboardLayout/NewProduct';
@@ -35,7 +34,7 @@ const router = createBrowserRouter([
             {
                 path: '/products/:id',
                 element: <PrivateRoute><Products></Products></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://product-server-ashen.vercel.app/category/${params.id}`)
             },
             {
                 path: '/login',
@@ -88,7 +87,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment />,
-                loader: ({ params }) => fetch(`http://localhost:5000/orders/${params.id}`)
+                loader: ({ params }) => fetch(`https://product-server-ashen.vercel.app/orders/${params.id}`)
             },
 
 

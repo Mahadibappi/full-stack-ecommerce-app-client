@@ -1,6 +1,6 @@
 # Let's introduce with Second hand laptop selling app
 
-## The Live Link:https://used-products-c867c.web.app/
+## The Live Link:https://used-products-c867c.web.app
 
 ## Available Features
 

@@ -4,7 +4,7 @@ import axios from "axios";
 const Categories = () => {
     const [categories, setCategories] = useState('')
 
-    axios.get('http://localhost:5000/brands')
+    axios.get('https://product-server-ashen.vercel.app/brands')
         .then(res => {
             setCategories(res.data)
 

@@ -13,7 +13,7 @@ const CheckoutForm = ({ orders }) => {
     const { price, name, email, _id } = orders
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://product-server-ashen.vercel.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 "content-Type": "application/json",
@@ -84,7 +84,7 @@ const CheckoutForm = ({ orders }) => {
                 bookingId: _id
 
             }
-            fetch('http://localhost:5000/payments', {
+            fetch('https://product-server-ashen.vercel.app/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -128,7 +128,8 @@ const CheckoutForm = ({ orders }) => {
                         },
                     }}
                 />
-                <button className='btn btn-sm btn-info mt-3 p-2' type="submit" disabled={!stripe || !clientSecret || processing}>
+
+                <button className='btn btn-sm btn-info mt-3 p-2' type="submit" disabled={(!stripe || !clientSecret || processing)}>
                     Pay
                 </button>
             </form>
