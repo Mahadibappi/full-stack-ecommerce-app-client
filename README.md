@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Features
 
+## admin - hasan@gmail.com , pass-pass:AS123@#
+
 ## Sales second laptop to the market
 
 ## Add product by your self
@@ -11,10 +13,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Admin role and different seller role
 
 ## Dynamic payment system
-
-## admin - hasan@gmail.com
-
-## pass-pass:AS123@#
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
