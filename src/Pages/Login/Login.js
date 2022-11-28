@@ -11,17 +11,16 @@ const Login = () => {
     const [loginErron, setloginError] = useState('')
     const { signIn, googleLogin, loading } = useContext(AuthContext)
     const [loginUserEmail, setloginUserEmail] = useState('')
-    // const [token] = useToken(loginUserEmail)
+    const [token] = useToken(loginUserEmail)
 
     const location = useLocation()
     const navigate = useNavigate()
-    // if (token) {
-    //     navigate('/')
-    // }
 
     const from = location.state?.from?.pathname || '/';
     const provider = new GoogleAuthProvider();
-
+    if (token) {
+        navigate(from, { replace: true })
+    }
 
     const handleGoogle = () => {
         return googleLogin(provider)

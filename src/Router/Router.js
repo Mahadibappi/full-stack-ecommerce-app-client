@@ -18,6 +18,7 @@ import Products from '../Pages/Products/Products';
 import SignUp from '../Pages/SignUp/SignUp';
 import AdminRoute from './AdminRoute';
 import PrivateRoute from './PrivateRoute';
+import SellerRoute from './SellerRoute';
 
 const router = createBrowserRouter([
     {
@@ -68,7 +69,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/sellers',
-                element: <NewProduct />
+                element: <SellerRoute> <NewProduct /> </SellerRoute>
             },
             {
                 path: '/dashboard/buyers',

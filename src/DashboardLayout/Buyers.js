@@ -20,7 +20,7 @@ const Buyers = () => {
         fetch(`http://localhost:5000/users/${buyer._id}`, {
             method: 'DELETE',
             headers: {
-                authorization: `bearer ${localStorage.getItem('accessToke')} `
+                authorization: `bearer ${localStorage.getItem('accessToken')} `
             }
         })
             .then(res => res.json())
@@ -55,7 +55,6 @@ const Buyers = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -66,7 +65,6 @@ const Buyers = () => {
                                 <th>{i}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{user.role}</td>
                                 <td>
                                     <label onClick={() => setDeleteBuyers(user)} htmlFor="confirm-modal" className="btn btn-xs btn-error">Delete</label>
                                 </td>

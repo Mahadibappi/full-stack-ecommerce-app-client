@@ -11,19 +11,16 @@ const MyOrders = () => {
     const { data: orders = [] } = useQuery({
         queryKey: ['orders', user?.email],
         queryFn: async () => {
-            const res = await fetch(url, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                }
-            });
+            const res = await fetch(url);
             const data = await res.json();
+            if (loading) {
+                return <Spinner></Spinner>
+            }
             return data
         }
     })
 
-    if (loading) {
-        return <Spinner></Spinner>
-    }
+
 
     return (
         <div>

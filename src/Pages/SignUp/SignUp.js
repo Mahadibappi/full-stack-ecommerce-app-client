@@ -10,10 +10,13 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, updateUser, googleLogin } = useContext(AuthContext)
     const [signupError, setSignupError] = useState('')
-    // const [createdEmail, setCreatedEmail] = useState('')
-    // const [token] = useToken(createdEmail)
-
+    const [createdEmail, setCreatedEmail] = useState('')
+    const [token] = useToken(createdEmail)
     const navigate = useNavigate()
+
+    if (token) {
+        navigate('/')
+    }
 
 
 
@@ -61,7 +64,7 @@ const SignUp = () => {
         })
             .then(res => res.json())
             .then(data => {
-
+                setCreatedEmail(email)
 
             })
 
@@ -76,7 +79,6 @@ const SignUp = () => {
                     <label className='label'> <span className='label-text'>Select Account</span></label>
                     <select  {...register('role')} className="select select-bordered w-full max-w-xs">
                         <option selected>User</option>
-                        <option>Admin</option>
                         <option>Seller</option>
                     </select>
                     <div className='form-control '>

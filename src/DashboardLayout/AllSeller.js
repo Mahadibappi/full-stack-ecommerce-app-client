@@ -9,25 +9,25 @@ const AllSeller = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users')
+            const res = await fetch('http://localhost:5000/users/seller')
             const data = await res.json()
             return data
         }
     })
 
-    const handleDelete = (buyer) => {
-        console.log(buyer);
-        fetch(`http://localhost:5000/users/${buyer._id}`, {
+    const handleDelete = (seller) => {
+        console.log(seller);
+        fetch(`http://localhost:5000/users/${seller._id}`, {
             method: 'DELETE',
             headers: {
-                authorization: `bearer ${localStorage.getItem('accessToke')} `
+                authorization: `bearer ${localStorage.getItem('accessToken')} `
             }
         })
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
                     refetch()
-                    toast.success('buyer deleted successfully')
+                    toast.success('seller deleted successfully')
                 }
             })
 
