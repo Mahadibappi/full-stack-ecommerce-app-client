@@ -42,7 +42,7 @@ const NewProduct = () => {
                     }
                     console.log(product)
                     // save products  to database 
-                    fetch('https://product-server-ashen.vercel.app/seller', {
+                    fetch('http://localhost:5000/seller', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -10,13 +10,13 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, updateUser, googleLogin } = useContext(AuthContext)
     const [signupError, setSignupError] = useState('')
-    const [createdEmail, setCreatedEmail] = useState('')
-    const [token] = useToken(createdEmail)
+    // const [createdEmail, setCreatedEmail] = useState('')
+    // const [token] = useToken(createdEmail)
 
     const navigate = useNavigate()
-    if (token) {
-        navigate('/')
-    }
+
+
+
 
     const provider = new GoogleAuthProvider();
 
@@ -37,7 +37,7 @@ const SignUp = () => {
                 updateUser(userInfo)
                     .then(() => {
                         saveUser(data.name, data.email)
-                        // navigate('/')
+                        navigate('/')
                     })
                     .catch(err => console.log(err))
 
@@ -51,7 +51,7 @@ const SignUp = () => {
     // create user for to send database 
     const saveUser = (name, email) => {
         const user = { name, email };
-        fetch('https://product-server-ashen.vercel.app/users', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -61,7 +61,7 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
 
-                setCreatedEmail(email)
+
             })
 
     };
